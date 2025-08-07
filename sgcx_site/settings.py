@@ -32,16 +32,6 @@ ALLOWED_HOSTS = ['ertihan.herokuapp.com', 'sgcx.org', 'www.sgcx.org']
 SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# Redirect www to non-www
-def force_domain_redirect(get_response):
-    def middleware(request):
-        host = request.get_host()
-        if host == 'www.sgcx.org':
-            from django.shortcuts import redirect
-            return redirect(f'https://sgcx.org{request.get_full_path()}', permanent=True)
-        return get_response(request)
-    return middleware
-
 
 # Application definition
 
@@ -59,7 +49,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'sgcx_site.settings.force_domain_redirect',  # Add this line
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

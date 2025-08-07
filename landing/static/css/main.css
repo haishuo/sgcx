@@ -334,3 +334,42 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* SGCX Logo Styles */
+.logo-svg {
+    height: 48px;
+    width: auto;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.logo-svg:hover {
+    transform: scale(1.05);
+}
+
+/* Logo color variations */
+.logo-white {
+    color: white;
+}
+
+.logo-dark {
+    color: #333;
+}
+
+/* Specific logo sizes */
+.logo-nav {
+    height: 40px;
+}
+
+.logo-main {
+    height: 60px;
+}
+
+.logo-small {
+    height: 32px;
+}
+
+@media (max-width: 768px) {
+    .logo-svg {
+        height: 40px;
+    }
+}

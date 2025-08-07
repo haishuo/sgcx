@@ -7,12 +7,19 @@
     <meta name="description" content="{{ meta_description|default:'Pioneering human-AI collaboration to solve fundamental problems in statistics and data science' }}">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{% static 'img/sgcx-logo-small.svg' %}">
+    <link rel="alternate icon" href="{% static 'img/favicon.ico' %}">
+    
     {% block extra_css %}{% endblock %}
 </head>
 <body>
     <header>
         <nav class="container">
-            <a href="{% url 'landing:home' %}" class="logo">SGCX</a>
+            <a href="{% url 'landing:home' %}" class="logo">
+                <img src="{% static 'img/sgcx-logo-nav.svg' %}" alt="SGCX" class="logo-svg logo-nav logo-dark">
+            </a>
             <ul class="nav-links">
                 <li><a href="{% url 'projects:project_list' %}">Projects</a></li>
                 <li><a href="{% url 'landing:about' %}">About</a></li>
