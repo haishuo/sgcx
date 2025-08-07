@@ -1,0 +1,86 @@
+<!-- landing/templates/landing/contact.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="content-section">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 50px;">
+            Connect with the SGCX research team
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-bottom: 50px;">
+            <div class="project-summary">
+                <h3>Research Collaboration</h3>
+                <p>Interested in collaborating on statistical methodology research or applying our tools to your work?</p>
+                <div style="margin-top: 20px;">
+                    <a href="mailto:contact@sgcx.org?subject=Research%20Collaboration" class="cta-button">Start a Conversation</a>
+                </div>
+            </div>
+
+            <div class="project-summary">
+                <h3>Project Lacuna Early Access</h3>
+                <p>Request early access to our missing data mechanism detection tools for your research or organization.</p>
+                <div style="margin-top: 20px;">
+                    <a href="mailto:contact@sgcx.org?subject=Project%20Lacuna%20Early%20Access" class="cta-button">Request Access</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <h2>Areas of Interest</h2>
+            <p>We're particularly interested in collaborations involving:</p>
+            
+            <div class="feature-grid" style="margin: 30px 0;">
+                <div class="feature-card">
+                    <div class="feature-icon">🏥</div>
+                    <h3>Pharmaceutical & Clinical</h3>
+                    <p>Clinical trial analysis, regulatory submissions, biostatistics, missing data in medical research</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Financial & Insurance</h3>
+                    <p>Risk modeling, economic analysis, actuarial statistics, incomplete financial data</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Academic Research</h3>
+                    <p>Cross-disciplinary statistical methodology, missing data analysis, computational statistics</p>
+                </div>
+            </div>
+
+            <h2>Contact Information</h2>
+            <div class="collaboration-highlight">
+                <p><strong>General Inquiries:</strong> <a href="mailto:contact@sgcx.org">contact@sgcx.org</a><br>
+                <strong>Research Collaboration:</strong> <a href="mailto:research@sgcx.org">research@sgcx.org</a><br>
+                <strong>Project Lacuna:</strong> <a href="mailto:lacuna@sgcx.org">lacuna@sgcx.org</a><br>
+                <strong>GitHub:</strong> <a href="https://github.com/sgcx-org">github.com/sgcx-org</a></p>
+            </div>
+
+            <h2>Our Approach to Partnerships</h2>
+            <p>We believe in transparent, mutually beneficial collaborations that advance statistical practice:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Open Methods:</strong> We share our methodologies and encourage validation</li>
+                <li><strong>Practical Focus:</strong> Our tools are designed for immediate real-world application</li>
+                <li><strong>Statistical Rigor:</strong> We maintain high standards while embracing innovation</li>
+                <li><strong>Human-AI Balance:</strong> We combine human expertise with AI capabilities transparently</li>
+            </ul>
+
+            <h2>What to Expect</h2>
+            <p>When you reach out to us, you can expect:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Rapid Response:</strong> We typically respond within 24-48 hours</li>
+                <li><strong>Technical Depth:</strong> Our conversations focus on methodological details and practical applications</li>
+                <li><strong>Collaborative Spirit:</strong> We're interested in partnerships that benefit both parties and advance the field</li>
+                <li><strong>Flexibility:</strong> We can adapt our approaches to fit different organizational needs and constraints</li>
+            </ul>
+
+            <div style="text-align: center; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; color: white;">
+                <h3 style="color: white; margin-bottom: 15px;">Ready to Advance Statistical Practice?</h3>
+                <p style="margin-bottom: 25px;">Join us in building the future of human-AI collaborative research</p>
+                <a href="mailto:contact@sgcx.org" class="cta-button">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

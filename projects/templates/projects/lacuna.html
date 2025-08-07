@@ -1,0 +1,69 @@
+<!-- projects/templates/projects/lacuna.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="project-showcase" style="padding: 60px 0;">
+    <div class="container">
+        <div class="project-title">Project</div>
+        <div class="project-logo">
+            <span class="consonant">L</span><span class="vowel">A</span><span class="consonant">C</span><span class="vowel">U</span><span class="consonant">N</span><span class="vowel">A</span>
+        </div>
+        <p style="text-align: center; font-size: 1.3rem; color: #ccc; margin-bottom: 40px;">
+            Neural Networks for Missing Data Mechanism Detection
+        </p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="about-content">
+            <h2>The Problem</h2>
+            <p>One of the most critical yet overlooked problems in statistics is distinguishing between different missing data mechanisms. For decades, researchers have simply assumed data are Missing at Random (MAR) without proper justification, leading to potentially biased analyses and incorrect conclusions.</p>
+
+            <div class="collaboration-highlight">
+                <h3>Missing Data Mechanisms</h3>
+                <p><strong>MAR (Missing at Random)</strong>: Missingness depends only on observed data<br>
+                <strong>MNAR (Missing Not at Random)</strong>: Missingness depends on unobserved data<br>
+                <strong>MCAR (Missing Completely at Random)</strong>: Missingness is completely random</p>
+            </div>
+
+            <h2>Our Solution</h2>
+            <p>Project Lacuna uses transformer-based neural networks with attention mechanisms to analyze patterns in missing data and provide quantified assessments of missingness mechanisms. Instead of handwaving the distinction, we provide evidence-based methodology.</p>
+
+            <h2>Technical Approach</h2>
+            <p>Our methodology combines several innovative elements:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Massive Synthetic Training Data</strong>: Generate datasets with known missingness mechanisms</li>
+                <li><strong>BERT-style Architecture</strong>: Encoder with binary classifier head for mechanism detection</li>
+                <li><strong>Attention Mechanisms</strong>: Understand which patterns drive missingness predictions</li>
+                <li><strong>Statistical Rigor</strong>: Three-stage validation with early stopping and uncertainty quantification</li>
+            </ul>
+
+            <h2>Impact Areas</h2>
+            <p>Project Lacuna provides revolutionary capabilities for:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Pharmaceutical Research</strong>: Proper analysis of clinical trial dropouts</li>
+                <li><strong>Biostatistics</strong>: Evidence-based missingness assessment in medical research</li>
+                <li><strong>Financial Modeling</strong>: Understanding missing data in economic datasets</li>
+                <li><strong>Insurance Analytics</strong>: Proper handling of incomplete claims data</li>
+                <li><strong>Academic Research</strong>: Rigorous missing data analysis across disciplines</li>
+            </ul>
+
+            <h2>Current Status</h2>
+            <div class="collaboration-highlight">
+                <p><strong>Phase 1 Complete</strong>: Proof of concept validated on Forge development system<br>
+                <strong>Phase 2 Planned</strong>: Scaling to A100 GPU clusters for production training<br>
+                <strong>Phase 3 Vision</strong>: TPU farm deployment for massive scale</p>
+            </div>
+
+            <h2>Design Philosophy</h2>
+            <p>The Lacuna logo embodies our approach: vowels (A, U, A) appear as white text on black backgrounds, representing missing data cells in a dataset, while consonants (L, C, N) remain visible as observed data. This creates an immediate visual metaphor for missing data analysis.</p>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="mailto:contact@sgcx.org?subject=Project%20Lacuna%20Early%20Access" class="cta-button" style="margin-right: 15px;">Request Early Access</a>
+                <a href="{% url 'projects:project_list' %}" class="project-link">← All Projects</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

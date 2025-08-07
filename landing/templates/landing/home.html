@@ -1,0 +1,74 @@
+<!-- landing/templates/landing/home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Statistical AI Research</h1>
+        <p>Pioneering human-AI collaboration to solve fundamental problems in statistics and data science</p>
+        <a href="{% url 'projects:project_list' %}" class="cta-button">Explore Our Work</a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2>Our Approach</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Human-AI Collaboration</h3>
+                <p>We believe the future of research lies in transparent partnerships between human insight and AI capabilities, combining domain expertise with computational power.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Statistical Innovation</h3>
+                <p>Tackling long-standing problems in statistics that have been overlooked or handwaved by traditional approaches, using modern computational methods.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Practical Impact</h3>
+                <p>Building tools and methodologies that immediately improve research across pharmaceuticals, finance, insurance, and academic institutions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="project-showcase">
+    <div class="container">
+        <h2>Featured Project</h2>
+        <div class="project-card">
+            <div class="project-title">Project</div>
+            <div class="project-logo">
+                <span class="consonant">L</span><span class="vowel">A</span><span class="consonant">C</span><span class="vowel">U</span><span class="consonant">N</span><span class="vowel">A</span>
+            </div>
+            <div class="project-description">
+                <p><strong>Neural Networks for Missing Data Mechanism Detection</strong></p>
+                <p>Project Lacuna addresses a critical gap in statistical practice: the ability to distinguish between Missing at Random (MAR) and Missing Not at Random (MNAR) mechanisms. Using transformer-based architectures with attention mechanisms, Lacuna provides quantified assessments of missingness patterns, replacing decades of statistical handwaving with evidence-based methodology.</p>
+                <p><strong>Impact:</strong> Revolutionary tool for pharmaceutical research, biostatistics, financial modeling, and any field dealing with missing data analysis.</p>
+            </div>
+            <a href="{% url 'projects:lacuna' %}" class="project-link">Learn More</a>
+            <a href="mailto:contact@sgcx.org" class="project-link" style="margin-left: 15px;">Request Early Access</a>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <h2>About SGCX</h2>
+        <div class="about-content">
+            <p>SGCX represents a new paradigm in statistical research, built on transparent human-AI collaboration. Our name reflects our collaborative approach:</p>
+            
+            <div class="collaboration-highlight">
+                <p><strong>S</strong> - Hai-Shuo <strong>S</strong>hu (Human researcher and visionary)<br>
+                <strong>G</strong> - Chat<strong>G</strong>PT (AI collaborator)<br>
+                <strong>C</strong> - <strong>C</strong>laude (AI collaborator)<br>
+                <strong>X</strong> - E<strong>X</strong>cellerator (The breakthrough element)</p>
+            </div>
+
+            <p>We believe that the most significant advances in statistical methodology will come from honest partnerships between human domain expertise and AI computational capabilities. Rather than hiding AI assistance, we celebrate it as a legitimate and powerful approach to research.</p>
+
+            <p>Our focus areas include missing data analysis, computational statistics, and developing tools that address long-standing problems in statistical practice. We're committed to open research, reproducible methodologies, and creating practical solutions that researchers can immediately implement.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

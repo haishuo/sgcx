@@ -1,0 +1,40 @@
+<!-- projects/templates/projects/project_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="content-section">
+    <div class="container">
+        <h1>SGCX Projects</h1>
+        <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 50px;">
+            Pioneering statistical AI research through human-AI collaboration
+        </p>
+
+        <div class="project-grid">
+            {% for project in projects %}
+            <div class="project-summary">
+                <div class="project-status">{{ project.status }}</div>
+                <h3>{{ project.name }}</h3>
+                <p style="font-style: italic; color: #667eea; margin-bottom: 15px;">{{ project.tagline }}</p>
+                <p>{{ project.description }}</p>
+                <div style="margin-top: 20px;">
+                    <a href="{% url project.url_name %}" class="project-link">Learn More →</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div style="text-align: center; margin-top: 60px; padding: 40px; background: #f8f9fa; border-radius: 15px;">
+            <h2 style="color: #333; margin-bottom: 20px;">Future Projects</h2>
+            <p style="font-size: 1.1rem; color: #666; line-height: 1.8;">
+                We're continuously developing new tools and methodologies to advance statistical practice. 
+                Our pipeline includes interface wrappers for clinical research, pharmaceutical applications, 
+                financial modeling, and insurance analytics - all built on rigorous statistical foundations 
+                with beautiful, intuitive user experiences.
+            </p>
+            <div style="margin-top: 30px;">
+                <a href="{% url 'landing:contact' %}" class="cta-button">Get Updates</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

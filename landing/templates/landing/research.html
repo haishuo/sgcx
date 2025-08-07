@@ -1,0 +1,93 @@
+<!-- landing/templates/landing/research.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="content-section">
+    <div class="container">
+        <h1>Research & Publications</h1>
+        <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 50px;">
+            Advancing statistical methodology through human-AI collaboration
+        </p>
+
+        <div class="about-content">
+            <h2>Research Philosophy</h2>
+            <p>Our research is built on the principle that transparency about human-AI collaboration strengthens rather than weakens scientific credibility. We openly acknowledge AI assistance in our research process while maintaining rigorous statistical standards.</p>
+
+            <div class="collaboration-highlight">
+                <h3>Core Principles</h3>
+                <p><strong>Transparency</strong>: Open about methodologies and AI collaboration<br>
+                <strong>Rigor</strong>: Maintaining statistical standards while embracing innovation<br>
+                <strong>Reproducibility</strong>: All methods designed for validation and extension<br>
+                <strong>Impact</strong>: Focus on problems that matter to real research</p>
+            </div>
+
+            <h2>Current Research Areas</h2>
+            
+            <h3>Missing Data Mechanism Detection</h3>
+            <p>Our flagship research addresses the critical gap in distinguishing between MAR (Missing at Random) and MNAR (Missing Not at Random) mechanisms. Traditional statistical practice often handwaves this distinction, leading to potentially biased analyses.</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li>Neural network architectures for missingness pattern recognition</li>
+                <li>Transformer-based attention mechanisms for missing data analysis</li>
+                <li>Quantified uncertainty in missingness mechanism assessment</li>
+                <li>Applications in pharmaceutical, financial, and insurance domains</li>
+            </ul>
+
+            <h3>Optimizer Performance Analysis</h3>
+            <p>Systematic evaluation of machine learning optimizers against known global minima using toy problems where exact solutions are feasible.</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li>Statistical rigor in optimizer comparison (50+ runs, confidence intervals)</li>
+                <li>Performance gaps between claimed and actual optimization results</li>
+                <li>Loss landscape characteristics and optimizer suitability</li>
+                <li>Evidence-based optimizer selection guidelines</li>
+            </ul>
+
+            <h2>Methodological Contributions</h2>
+            
+            <h3>Computational Statistics</h3>
+            <p>Leveraging modern GPU architectures and cloud computing for statistical methodology:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li>GPU-native statistical libraries (PyMVNMLE, PyRegression)</li>
+                <li>Scalable implementations of classical statistical methods</li>
+                <li>Modern interfaces for traditional statistical workflows</li>
+            </ul>
+
+            <h3>Human-AI Collaboration Frameworks</h3>
+            <p>Developing best practices for transparent AI-assisted research:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li>Methodological transparency in AI-assisted research</li>
+                <li>Validation frameworks for AI-generated hypotheses</li>
+                <li>Quality control in human-AI collaborative workflows</li>
+            </ul>
+
+            <h2>Upcoming Publications</h2>
+            <div class="project-summary">
+                <h3>"Neural Networks for Missing Data Mechanism Detection"</h3>
+                <p><strong>Target Journal:</strong> Journal of the American Statistical Association (JASA)</p>
+                <p><strong>Status:</strong> Manuscript in preparation</p>
+                <p><strong>Summary:</strong> Presents Project Lacuna methodology, validation results, and applications across multiple domains. Demonstrates significant improvements over traditional Little's MCAR test and related approaches.</p>
+            </div>
+
+            <div class="project-summary">
+                <h3>"Quantifying Optimizer Performance: A Blacklight Analysis"</h3>
+                <p><strong>Target Conference:</strong> International Conference on Machine Learning (ICML)</p>
+                <p><strong>Status:</strong> Research phase</p>
+                <p><strong>Summary:</strong> Systematic evaluation of popular optimizers against known global minima, revealing true performance gaps and providing evidence-based selection guidelines.</p>
+            </div>
+
+            <h2>Open Research</h2>
+            <p>We believe in advancing the field through open methodologies and reproducible research. Our work is designed to complement and enhance traditional statistical practice:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Open Source Libraries</strong>: PyMVNMLE, PyRegression, and related tools</li>
+                <li><strong>Reproducible Methods</strong>: All research includes complete implementation details</li>
+                <li><strong>Community Impact</strong>: Tools designed for immediate practical application</li>
+                <li><strong>Educational Resources</strong>: Documentation and tutorials for new methodologies</li>
+            </ul>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="mailto:contact@sgcx.org?subject=Research%20Collaboration" class="cta-button" style="margin-right: 15px;">Collaborate</a>
+                <a href="https://github.com/sgcx-org" class="project-link">View Code →</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
