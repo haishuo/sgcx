@@ -26,11 +26,13 @@ SECRET_KEY = 'django-insecure-5evif9ch5oqf**b#fp$vsc+lf4pn3x*8leo^k6z2c2cf_ytn9e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ertihan.herokuapp.com', 'sgcx.org', 'www.sgcx.org']
+ALLOWED_HOSTS = ['ertihan.herokuapp.com', 'sgcx.org', 'www.sgcx.org', 'localhost', '127.0.0.1']
 
-# Force HTTPS in production
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# Force HTTPS only in production (when DEBUG=False or on Heroku)
+IS_HEROKU = 'DYNO' in os.environ
+if not DEBUG or IS_HEROKU:
+    SECURE_SSL_REDIRECT = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
