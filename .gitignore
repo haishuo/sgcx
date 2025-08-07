@@ -86,7 +86,7 @@ coverage.xml
 .ipynb_checkpoints
 
 # pyenv
-.python-version
+# ß.python-version
 
 # Backup files
 *.bak
