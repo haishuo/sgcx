@@ -26,7 +26,21 @@ SECRET_KEY = 'django-insecure-5evif9ch5oqf**b#fp$vsc+lf4pn3x*8leo^k6z2c2cf_ytn9e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']  # Allow all hosts for now - will restrict in production
+ALLOWED_HOSTS = ['ertihan.herokuapp.com', 'sgcx.org', 'www.sgcx.org']
+
+# Force HTTPS in production
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Redirect www to non-www
+def force_domain_redirect(get_response):
+    def middleware(request):
+        host = request.get_host()
+        if host == 'www.sgcx.org':
+            from django.shortcuts import redirect
+            return redirect(f'https://sgcx.org{request.get_full_path()}', permanent=True)
+        return get_response(request)
+    return middleware
 
 
 # Application definition
@@ -44,7 +58,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add WhiteNoise for static files
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'sgcx_site.settings.force_domain_redirect',  # Add this line
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
