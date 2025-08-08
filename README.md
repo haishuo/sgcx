@@ -36,6 +36,24 @@ SGCX is a statistical AI research organization that tackles long-standing proble
 - Statistical rigor with 20-50 runs per optimizer configuration
 - Status: Research phase
 
+### 🌊 GradFlow
+**GPU-Accelerated WENO Implementation**
+- Modern PyTorch implementation of WENO schemes using conv operations
+- Leverages GPU VRAM and multi-GPU communication for large-scale problems
+- Status: Early development with numerical methods expertise
+
+### 📊 AFL Research
+**Approximate Forgiveness Level in Neural Networks**
+- Discovery that random pruning improves performance up to ~70-80% sparsity
+- Challenges traditional pruning methodologies and assumptions
+- Status: Significant results obtained, implications being explored
+
+### 🌳 Project Bonsai
+**Statistics-Informed Neural Network Pruning**
+- FANIM (Forward Advanced Neuron Impact Metric) with Wilcoxon testing
+- Conservative pruning approach using statistical significance
+- Status: On hold pending AFL research outcomes
+
 ## Technical Stack
 
 - **Framework**: Django 5.2
@@ -102,7 +120,7 @@ This site is deployed to Heroku and accessible at [sgcx.org](https://sgcx.org).
 ## Related Repositories
 
 - **[haishuo/lacuna](https://github.com/haishuo/lacuna)** - Project Lacuna implementation
-- **[haishuo/sgcx-blacklight](https://github.com/haishuo/sgcx-blacklight)** - Project Blacklight research
+- **[haishuo/sgcx-blacklight](https://github.com/haishuo/blacklight)** - Project Blacklight research
 - **PyMVNMLE** - Maximum likelihood estimation library (planned)
 - **PyRegression** - GPU-accelerated regression library (planned)
 

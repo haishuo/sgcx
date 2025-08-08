@@ -1,0 +1,84 @@
+<!-- projects/templates/projects/gradflow.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 80px 0;">
+    <div class="container">
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">GradFlow</h1>
+        <p style="font-size: 1.3rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            GPU-Accelerated WENO Implementation using PyTorch
+        </p>
+        <div class="project-status" style="background: #3498db; margin-bottom: 20px;">Early Development</div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="about-content">
+            <h2>The Innovation</h2>
+            <p>GradFlow represents a breakthrough in computational fluid dynamics by recognizing that PyTorch's convolution operations are fundamentally the same as WENO (Weighted Essentially Non-Oscillatory) stencil operations. This insight allows us to leverage modern GPU architectures for high-performance numerical methods.</p>
+
+            <div class="collaboration-highlight">
+                <h3>Key Insight</h3>
+                <p>PyTorch's <code>conv1d</code>, <code>conv2d</code>, and <code>conv3d</code> operations can directly implement WENO stencils, transforming traditional numerical methods into GPU-native operations with massive parallelization potential.</p>
+            </div>
+
+            <h2>Technical Approach</h2>
+            <p>Our implementation strategy leverages several key advantages of modern GPU computing:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Convolution Mapping</strong>: Direct translation of WENO stencils to PyTorch convolution kernels</li>
+                <li><strong>Memory Efficiency</strong>: Most WENO problems fit in modern GPU VRAM (80GB on H100 systems)</li>
+                <li><strong>Multi-GPU Scaling</strong>: Fast inter-GPU communication for boundary conditions on large problems</li>
+                <li><strong>Automatic Differentiation</strong>: PyTorch's autograd enables sensitivity analysis and optimization</li>
+            </ul>
+
+            <h2>Hardware Scalability</h2>
+            <p>GradFlow is designed to scale across different GPU configurations:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Consumer GPUs</strong>: Development and smaller problems on RTX 5070 Ti (16GB VRAM)</li>
+                <li><strong>Professional GPUs</strong>: Production workloads on H100 systems (80GB VRAM)</li>
+                <li><strong>Multi-GPU Clusters</strong>: Distributed computation for extremely large domains</li>
+                <li><strong>Cloud Deployment</strong>: Scalable cloud-based numerical simulations</li>
+            </ul>
+
+            <h2>Applications</h2>
+            <p>GradFlow enables GPU-accelerated solutions for:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Computational Fluid Dynamics</strong>: Fluid flow simulations with shock waves</li>
+                <li><strong>Conservation Laws</strong>: Hyperbolic partial differential equations</li>
+                <li><strong>Climate Modeling</strong>: Large-scale atmospheric and oceanic simulations</li>
+                <li><strong>Financial Mathematics</strong>: High-dimensional option pricing and risk calculations</li>
+            </ul>
+
+            <h2>Research Collaboration</h2>
+            <div class="collaboration-highlight">
+                <p><strong>Expert Collaboration</strong>: This project benefits from collaboration with leading experts in computational fluid dynamics and numerical methods, ensuring mathematical rigor and practical applicability.</p>
+                <p><strong>Validation Strategy</strong>: Extensive benchmarking against established WENO implementations to verify accuracy while demonstrating performance gains.</p>
+            </div>
+
+            <h2>Development Status</h2>
+            <p>GradFlow is in early development with promising initial results:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Proof of Concept</strong>: Successful mapping of basic WENO operations to PyTorch</li>
+                <li><strong>Performance Testing</strong>: Initial benchmarks show significant speedups over traditional implementations</li>
+                <li><strong>Architecture Design</strong>: Modular design for different WENO schemes and problem types</li>
+                <li><strong>Validation Framework</strong>: Testing against analytical solutions and established benchmarks</li>
+            </ul>
+
+            <h2>Impact Potential</h2>
+            <p>If successful, GradFlow could revolutionize numerical methods by:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Democratizing HPC</strong>: Making high-performance simulations accessible on consumer hardware</li>
+                <li><strong>Accelerating Research</strong>: Orders of magnitude faster iteration times for numerical experiments</li>
+                <li><strong>Enabling New Science</strong>: Previously impossible large-scale simulations becoming feasible</li>
+                <li><strong>Industry Applications</strong>: Real-time simulation capabilities for engineering and finance</li>
+            </ul>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="mailto:contact@sgcx.org?subject=GradFlow%20Collaboration" class="cta-button" style="margin-right: 15px;">Collaborate with Us</a>
+                <a href="{% url 'projects:project_list' %}" class="project-link">← All Projects</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

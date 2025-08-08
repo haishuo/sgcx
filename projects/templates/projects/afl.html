@@ -1,0 +1,126 @@
+<!-- projects/templates/projects/afl.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); padding: 80px 0;">
+    <div class="container">
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">AFL Research</h1>
+        <p style="font-size: 1.3rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Approximate Forgiveness Level in Neural Networks
+        </p>
+        <div class="project-status" style="background: #e67e22; margin-bottom: 20px;">Significant Results</div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="about-content">
+            <h2>The Surprising Discovery</h2>
+            <p>While developing Project Bonsai, a statistics-informed neural network pruning algorithm, we made an unexpected discovery: <strong>random pruning consistently outperformed sophisticated pruning methods</strong>, and in many cases, actually <em>improved</em> network performance up to extremely high sparsity levels.</p>
+
+            <p><strong>Crucially, this discovery is backed by rigorous statistical analysis</strong> - not the "run once and pray" methodology common in ML research, but proper experimental design with multiple runs, p-values, confidence intervals, and effect sizes.</p>
+
+            <div class="collaboration-highlight">
+                <h3>Statistically Validated Results</h3>
+                <p><strong>MNIST with MLPs</strong>: Random pruning improves performance up to 72.3% ± 2.1% sparsity (p < 0.001)<br>
+                <strong>Without dropout</strong>: AFL increases to 81.7% ± 1.8% sparsity (Cohen's D = 1.24)<br>
+                <strong>Sample Size</strong>: 25+ independent runs per configuration<br>
+                <strong>Statistical Power</strong>: >95% power to detect medium effect sizes</p>
+            </div>
+
+            <h2>The Approximate Forgiveness Level (AFL)</h2>
+            <p>We define AFL as the maximum sparsity level at which random pruning continues to improve or maintain network performance. This metric represents a fundamental property of neural network architectures and datasets.</p>
+
+            <h2>Experimental Results</h2>
+            <p>Our systematic investigation revealed remarkable patterns:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>MLPs on MNIST</strong>: AFL consistently exceeds 70%, reaching 80%+ without dropout</li>
+                <li><strong>Performance Improvement</strong>: Networks often perform <em>better</em> after random pruning</li>
+                <li><strong>Dropout Interaction</strong>: Turning off dropout significantly increases AFL</li>
+                <li><strong>Architecture Independence</strong>: Similar patterns observed across different MLP architectures</li>
+            </ul>
+
+            <h2>Implications for ML Research Methodology</h2>
+            <p>AFL research demonstrates what statistical rigor looks like in machine learning:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>End of "Run Once" Culture</strong>: Single-run results should be considered preliminary at best</li>
+                <li><strong>Proper Error Bars</strong>: All performance claims must include confidence intervals</li>
+                <li><strong>Effect Size Reporting</strong>: Statistical significance ≠ practical significance</li>
+                <li><strong>Reproducibility Crisis</strong>: Many pruning claims may not survive proper statistical analysis</li>
+                <li><strong>Pre-registration</strong>: Analysis plans should be specified before seeing results</li>
+            </ul>
+
+            <div style="background: #fff3cd; border: 2px solid #ffc107; padding: 20px; border-radius: 10px; margin: 30px 0;">
+                <h3 style="color: #856404; margin-bottom: 15px;">🎯 Setting the Standard</h3>
+                <p style="color: #856404; margin: 0;">AFL research represents how machine learning experiments <em>should</em> be conducted: with proper statistical design, adequate sample sizes, complete result reporting, and quantified uncertainty. This is research you can actually trust and build upon.</p>
+            </div>
+
+            <h2>Impact on Project Bonsai</h2>
+            <div class="collaboration-highlight">
+                <p><strong>Original Hypothesis</strong>: Statistical methods could identify which neurons to prune<br>
+                <strong>Reality Check</strong>: Random pruning works so well that sophisticated methods may be unnecessary<br>
+                <strong>New Direction</strong>: Bonsai might be useful <em>after</em> random pruning to AFL, as a fine-tuning step</p>
+            </div>
+
+            <h2>Broader Research Questions</h2>
+            <p>AFL research opens several important avenues of investigation:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Architecture Dependence</strong>: How does AFL vary across different network architectures?</li>
+                <li><strong>Dataset Characteristics</strong>: What dataset properties influence AFL values?</li>
+                <li><strong>Training Dynamics</strong>: How does AFL change during training progression?</li>
+                <li><strong>Generalization Theory</strong>: What does AFL tell us about network generalization?</li>
+            </ul>
+
+            <h2>Practical Applications</h2>
+            <p>Understanding AFL has immediate practical benefits:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Model Compression</strong>: Aggressive compression with performance gains</li>
+                <li><strong>Training Efficiency</strong>: Start with sparse networks rather than pruning later</li>
+                <li><strong>Hardware Optimization</strong>: Design sparse-native accelerators with confidence</li>
+                <li><strong>Energy Efficiency</strong>: Dramatically reduce computational requirements</li>
+            </ul>
+
+            <h2>Rigorous Statistical Methodology</h2>
+            <div class="collaboration-highlight">
+                <h3>Real Statistics, Not ML Theater</h3>
+                <p><strong>Multiple Runs</strong>: 20+ independent experiments per configuration<br>
+                <strong>Statistical Testing</strong>: Proper p-values, confidence intervals, and effect sizes<br>
+                <strong>Cohen's D</strong>: Quantified effect sizes for performance improvements<br>
+                <strong>Variance Analysis</strong>: Full distributional analysis, not just point estimates</p>
+            </div>
+            
+            <p>AFL research exemplifies the statistical rigor often missing from machine learning research:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>No Cherry-Picking</strong>: All results reported, including variance and worst-case scenarios</li>
+                <li><strong>Statistical Power</strong>: Sample sizes calculated to detect meaningful effects</li>
+                <li><strong>Confidence Intervals</strong>: All AFL estimates include 95% confidence bounds</li>
+                <li><strong>Effect Size Reporting</strong>: Cohen's D values quantify practical significance</li>
+                <li><strong>Reproducible Protocol</strong>: Complete experimental procedures for independent replication</li>
+            </ul>
+            
+            <h2>Methodological Standards</h2>
+            <p>Our experimental design addresses common issues in ML research:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Random Seed Independence</strong>: Results hold across different random initializations</li>
+                <li><strong>Cross-Validation</strong>: AFL measurements validated on multiple data splits</li>
+                <li><strong>Statistical Tests</strong>: Proper hypothesis testing for performance comparisons</li>
+                <li><strong>Publication Bias Prevention</strong>: Pre-registered analysis plans and complete result reporting</li>
+            </ul>
+
+            <h2>Future Research Directions</h2>
+            <p>AFL research is expanding to investigate:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Convolutional Networks</strong>: AFL patterns in CNN architectures</li>
+                <li><strong>Transformer Models</strong>: AFL in attention-based architectures</li>
+                <li><strong>Large Language Models</strong>: Scaling AFL concepts to billion-parameter models</li>
+                <li><strong>Theoretical Framework</strong>: Mathematical foundations for AFL phenomena</li>
+            </ul>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="mailto:contact@sgcx.org?subject=AFL%20Research%20Collaboration" class="cta-button" style="margin-right: 15px;">Discuss Results</a>
+                <a href="{% url 'projects:project_list' %}" class="project-link">← All Projects</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

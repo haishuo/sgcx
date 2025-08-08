@@ -17,6 +17,27 @@ def project_list(request):
             'description': 'Quantify how close optimizers actually get to global minima',
             'status': 'Research Phase',
             'url_name': 'projects:blacklight'
+        },
+        {
+            'name': 'GradFlow',
+            'tagline': 'GPU-Accelerated WENO Implementation',
+            'description': 'Modern PyTorch implementation of WENO schemes using convolution operations',
+            'status': 'Early Development',
+            'url_name': 'projects:gradflow'
+        },
+        {
+            'name': 'AFL Research',
+            'tagline': 'Approximate Forgiveness Level in Neural Networks',
+            'description': 'Discovery that random pruning improves performance up to 70-80% sparsity',
+            'status': 'Significant Results',
+            'url_name': 'projects:afl'
+        },
+        {
+            'name': 'Project Bonsai',
+            'tagline': 'Statistics-Informed Neural Network Pruning',
+            'description': 'FANIM-based pruning with Wilcoxon statistical testing',
+            'status': 'On Hold',
+            'url_name': 'projects:bonsai'
         }
     ]
     
@@ -32,16 +53,6 @@ def lacuna(request):
     context = {
         'page_title': 'Project Lacuna - SGCX',
         'meta_description': 'Neural Networks for Missing Data Mechanism Detection',
-        'project': {
-            'name': 'Project Lacuna',
-            'tagline': 'Neural Networks for Missing Data Mechanism Detection',
-            'description': '''Project Lacuna addresses a critical gap in statistical practice: 
-                           the ability to distinguish between Missing at Random (MAR) and 
-                           Missing Not at Random (MNAR) mechanisms.''',
-            'technology': 'Transformer-based architecture with attention mechanisms',
-            'impact': 'Revolutionary tool for pharmaceutical research, biostatistics, financial modeling',
-            'status': 'Proof of concept completed, scaling phase planned'
-        }
     }
     return render(request, 'projects/lacuna.html', context)
 
@@ -50,14 +61,29 @@ def blacklight(request):
     context = {
         'page_title': 'Project Blacklight - SGCX',
         'meta_description': 'Revealing true optimizer performance against known global minima',
-        'project': {
-            'name': 'Project Blacklight',
-            'tagline': 'Revealing true optimizer performance',
-            'description': '''Generate toy neural networks small enough to find global minimum, 
-                           then test various optimizers with statistical rigor.''',
-            'methodology': 'Minimum 20-50 runs per optimizer with full statistical analysis',
-            'impact': 'Quantify how close optimizers actually get to true optimum vs marketing claims',
-            'status': 'Conceptual phase'
-        }
     }
     return render(request, 'projects/blacklight.html', context)
+
+def gradflow(request):
+    """GradFlow detail page"""
+    context = {
+        'page_title': 'GradFlow - SGCX',
+        'meta_description': 'GPU-Accelerated WENO Implementation using PyTorch',
+    }
+    return render(request, 'projects/gradflow.html', context)
+
+def afl(request):
+    """AFL Research detail page"""
+    context = {
+        'page_title': 'AFL Research - SGCX',
+        'meta_description': 'Approximate Forgiveness Level in Neural Networks',
+    }
+    return render(request, 'projects/afl.html', context)
+
+def bonsai(request):
+    """Project Bonsai detail page"""
+    context = {
+        'page_title': 'Project Bonsai - SGCX',
+        'meta_description': 'Statistics-Informed Neural Network Pruning',
+    }
+    return render(request, 'projects/bonsai.html', context)

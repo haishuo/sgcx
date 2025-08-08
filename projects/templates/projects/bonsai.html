@@ -1,0 +1,112 @@
+<!-- projects/templates/projects/bonsai.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%); padding: 80px 0;">
+    <div class="container">
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">Project Bonsai</h1>
+        <p style="font-size: 1.3rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Pruning neural networks with precision and discipline
+        </p>
+        <div class="project-status" style="background: #f39c12; margin-bottom: 20px;">On Hold</div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="about-content">
+            <h2>The Philosophy</h2>
+            <p>Project Bonsai embodies the philosophy that neural network pruning should be deliberate and thoughtful—akin to tending a bonsai tree. Rather than crude magnitude-based approaches, Bonsai emphasizes careful, iterative reduction of network parameters based on statistical sensitivity analysis.</p>
+
+            <div class="collaboration-highlight">
+                <h3>Core Metaphor</h3>
+                <p><strong>Bonsai Art</strong>: Like cultivating a bonsai, pruning should be a disciplined practice that enhances rather than diminishes the essential structure. Each cut should be informed, purposeful, and reversible if proven wrong.</p>
+            </div>
+
+            <h2>Technical Methodology</h2>
+            <p>Bonsai introduces several novel concepts for principled neural network pruning:</p>
+
+            <h3>Neural Impact Metric (NIM)</h3>
+            <p>The foundation of Bonsai is the NIM, defined as the partial derivative of the loss function with respect to the post-activation value of a neuron. This is essentially the <strong>saliency</strong> of each neuron, easily captured using PyTorch's gradient hooks.</p>
+
+            <h3>Forward Advanced Neuron Impact Metric (FANIM)</h3>
+            <p>FANIM extends NIM by incorporating temporal dynamics:</p>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; font-family: monospace;">
+                FANIM = NIM × (a[i+1] - a[i]) / L
+            </div>
+            <p>Where:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>NIM</strong>: Neural Impact Metric (saliency)</li>
+                <li><strong>a[i+1] - a[i]</strong>: Change in activation between consecutive epochs/batches</li>
+                <li><strong>L</strong>: Current loss (for normalization)</li>
+            </ul>
+
+            <h2>Statistical Framework</h2>
+            <p>Bonsai applies rigorous statistical testing to pruning decisions:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Data Collection</strong>: Accumulate FANIM matrices across multiple training steps</li>
+                <li><strong>Wilcoxon Testing</strong>: Apply Wilcoxon Signed-Rank Test to each neuron's FANIM values</li>
+                <li><strong>Significance Threshold</strong>: Prune neurons with p-value < 5% for "different from zero in wrong direction"</li>
+                <li><strong>Conservative Approach</strong>: Only prune when statistical evidence is overwhelming</li>
+            </ul>
+
+            <h2>Algorithmic Process</h2>
+            <p>The Bonsai pruning algorithm follows a disciplined iterative approach:</p>
+            <ol style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Training Phase</strong>: Train network while collecting FANIM data</li>
+                <li><strong>Statistical Analysis</strong>: Run Wilcoxon tests on accumulated FANIM matrices</li>
+                <li><strong>Pruning Decision</strong>: Remove neurons failing statistical significance tests</li>
+                <li><strong>Fine-tuning</strong>: Train pruned network for 5 epochs to stabilize</li>
+                <li><strong>Convergence Check</strong>: Repeat until no neurons meet pruning criteria</li>
+            </ol>
+
+            <h2>BANIM: Backward Analysis</h2>
+            <p>While FANIM looks forward in time, BANIM (Backward Advanced Neuron Impact Metric) examines past behavior:</p>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; font-family: monospace;">
+                BANIM = NIM × (a[i] - a[i-1]) / L
+            </div>
+            <p>BANIM is mathematically less clean (not a pure Taylor expansion) but computationally simpler since it doesn't require "phantom" forward steps.</p>
+
+            <h2>Challenges and Lessons</h2>
+            <div class="collaboration-highlight">
+                <h3>The AFL Discovery</h3>
+                <p><strong>Unexpected Result</strong>: Bonsai consistently pruned more conservatively than random pruning<br>
+                <strong>Performance Gap</strong>: Random pruning to 70%+ sparsity often outperformed Bonsai<br>
+                <strong>Strategic Pivot</strong>: AFL research revealed that the problem space is different than assumed</p>
+            </div>
+
+            <h2>Current Status and Future Direction</h2>
+            <p>Project Bonsai is on hold pending resolution of AFL research findings:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Conservative Nature</strong>: Bonsai pruning falls well below AFL thresholds</li>
+                <li><strong>Potential Role</strong>: May be useful as a refinement step after random pruning to AFL</li>
+                <li><strong>Sequential Strategy</strong>: Random prune to AFL, then apply Bonsai for fine-tuning</li>
+                <li><strong>Research Question</strong>: Does statistical pruning add value after aggressive random pruning?</li>
+            </ul>
+
+            <h2>Technical Implementation</h2>
+            <p>Bonsai's implementation leverages modern PyTorch capabilities:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Gradient Hooks</strong>: Automatic NIM collection during training</li>
+                <li><strong>Activation Tracking</strong>: Efficient storage of activation sequences</li>
+                <li><strong>Statistical Computing</strong>: Integration with SciPy for Wilcoxon testing</li>
+                <li><strong>Reproducible Research</strong>: Centralized configuration management</li>
+            </ul>
+
+            <h2>Philosophical Impact</h2>
+            <p>Beyond technical contributions, Bonsai represents a methodological approach:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+                <li><strong>Discipline Over Heuristics</strong>: Replace rules of thumb with statistical rigor</li>
+                <li><strong>Principled Methodology</strong>: Every pruning decision backed by evidence</li>
+                <li><strong>Iterative Refinement</strong>: Gradual improvement rather than dramatic changes</li>
+                <li><strong>Reversible Decisions</strong>: Statistical framework allows for confidence assessment</li>
+            </ul>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="mailto:contact@sgcx.org?subject=Project%20Bonsai%20Research" class="cta-button" style="margin-right: 15px;">Discuss Methodology</a>
+                <a href="{% url 'projects:project_list' %}" class="project-link">← All Projects</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
