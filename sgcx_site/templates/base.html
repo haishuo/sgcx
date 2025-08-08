@@ -19,7 +19,13 @@
             <a href="{% url 'landing:home' %}" class="logo">
                 <img src="{% static 'images/sgcx-logo-main-white.png' %}" alt="SGCX" class="logo-nav">
             </a>
-            <ul class="nav-links">
+            
+            <!-- Mobile menu toggle button -->
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                ☰
+            </button>
+            
+            <ul class="nav-links" id="nav-links">
                 <li><a href="{% url 'projects:project_list' %}">Projects</a></li>
                 <li><a href="{% url 'landing:about' %}">About</a></li>
                 <li><a href="{% url 'landing:research' %}">Research</a></li>
@@ -50,6 +56,30 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('mobile-open');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('nav-links');
+            if (!nav.contains(event.target) && navLinks.classList.contains('mobile-open')) {
+                navLinks.classList.remove('mobile-open');
+            }
+        });
+        
+        // Close mobile menu when window resizes to desktop
+        window.addEventListener('resize', function() {
+            const navLinks = document.getElementById('nav-links');
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('mobile-open');
+            }
+        });
+    </script>
 
     {% block extra_js %}{% endblock %}
 </body>

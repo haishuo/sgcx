@@ -440,19 +440,110 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-links.mobile-open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.nav-links.mobile-open li {
+    margin: 0;
+    text-align: center;
+}
+
+.nav-links.mobile-open a {
+    display: block;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-links.mobile-open a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Responsive design for hero logo */
+@media (max-width: 768px) {
     .hero-logo {
-        height: 80px;
-        margin-bottom: 20px;
+        height: 100px;
+        margin-bottom: 30px;
     }
     
     .hero-logo .logo-main .x-behind {
-        font-size: 4.5rem;
-        transform: translate(-50%, -50%) scaleX(1.4);
+        font-size: 6rem;
+        transform: translate(-50%, -50%) scaleX(1.6);
     }
     
     .hero-logo .logo-main .sgc-front {
-        font-size: 2.2rem;
-        letter-spacing: 0.05em;
+        font-size: 3rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    /* Show mobile menu button, hide desktop nav */
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    /* Make nav container relative for absolute positioning */
+    nav {
+        position: relative;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .logo-svg {
+        height: 40px;
+    }
+    
+    /* Better button spacing */
+    .cta-button {
+        margin: 10px 5px;
+        display: inline-block;
+        min-width: 120px;
+        text-align: center;
+    }
+    
+    .project-link {
+        margin: 8px 0;
+        display: inline-block;
+        min-width: 100px;
+        text-align: center;
     }
 }
