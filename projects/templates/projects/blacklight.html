@@ -2,68 +2,68 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="hero" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 80px 0;">
+<section class="hero" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 80px 0; color: #87ceeb;">
     <div class="container">
-        <h1 style="font-size: 3rem; margin-bottom: 20px;">Project Blacklight</h1>
-        <p style="font-size: 1.3rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <h1 style="font-size: 3rem; margin-bottom: 20px; color: #87ceeb;">Project Blacklight</h1>
+        <p style="font-size: 1.3rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; color: #b0e0e6;">
             Revealing true optimizer performance against known global minima
         </p>
-        <div class="project-status" style="background: #e74c3c; margin-bottom: 20px;">Research Phase</div>
+        <div class="project-status" style="background: rgba(135,206,235,0.2); margin-bottom: 20px; color: #87ceeb; border: 1px solid #87ceeb;">Research Phase</div>
     </div>
 </section>
 
-<section class="content-section">
+<section class="content-section" style="background: #2c3e50; color: #e6f3ff;">
     <div class="container">
         <div class="about-content">
-            <h2>The Hidden Problem</h2>
-            <p>Machine learning optimizers make bold claims about performance, but how do we know how close they actually get to the true global minimum? In practice, we never know where the global minimum is, so optimizer comparisons rely on relative performance - which can be misleading.</p>
+            <h2 style="color: #87ceeb;">The Hidden Problem</h2>
+            <p style="color: #e6f3ff;">Machine learning optimizers make bold claims about performance, but how do we know how close they actually get to the true global minimum? In practice, we never know where the global minimum is, so optimizer comparisons rely on relative performance - which can be misleading.</p>
 
-            <div class="collaboration-highlight">
-                <h3>The Blacklight Metaphor</h3>
-                <p>Like a blacklight revealing hidden stains invisible under normal light, Project Blacklight exposes what optimizers actually do in the dark by testing them against problems where we <em>do</em> know the true answer.</p>
+            <div class="collaboration-highlight" style="background: rgba(135,206,235,0.1); border-left: 5px solid #87ceeb; color: #e6f3ff;">
+                <h3 style="color: #87ceeb;">The Blacklight Metaphor</h3>
+                <p style="color: #e6f3ff;">Like a blacklight revealing hidden stains invisible under normal light, Project Blacklight exposes what optimizers actually do in the dark by testing them against problems where we <em style="color: #87ceeb;">do</em> know the true answer.</p>
             </div>
 
-            <h2>Our Approach</h2>
-            <p>Project Blacklight generates toy neural networks small enough that we can find the global minimum through exhaustive search or mathematical analysis. We then test various optimizers (SGD, Adam, RMSprop, BFGS, etc.) with statistical rigor to see how close they actually get.</p>
+            <h2 style="color: #87ceeb;">Our Approach</h2>
+            <p style="color: #e6f3ff;">Project Blacklight generates toy neural networks small enough that we can find the global minimum through exhaustive search or mathematical analysis. We then test various optimizers (SGD, Adam, RMSprop, BFGS, etc.) with statistical rigor to see how close they actually get.</p>
 
-            <h2>Methodology</h2>
-            <p>Our research protocol includes:</p>
-            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
-                <li><strong>Toy Problem Generation</strong>: Create neural networks small enough for exact solutions</li>
-                <li><strong>Statistical Rigor</strong>: Minimum 20-50 runs per optimizer configuration</li>
-                <li><strong>Comprehensive Analysis</strong>: p-values, confidence intervals, quartiles, variance measurements</li>
-                <li><strong>Multiple Architectures</strong>: Test across different network topologies and activation functions</li>
-                <li><strong>Hyperparameter Sensitivity</strong>: Systematic exploration of learning rates and other settings</li>
+            <h2 style="color: #87ceeb;">Methodology</h2>
+            <p style="color: #e6f3ff;">Our research protocol includes:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8; color: #e6f3ff;">
+                <li><strong style="color: #87ceeb;">Toy Problem Generation</strong>: Create neural networks small enough for exact solutions</li>
+                <li><strong style="color: #87ceeb;">Statistical Rigor</strong>: Minimum 20-50 runs per optimizer configuration</li>
+                <li><strong style="color: #87ceeb;">Comprehensive Analysis</strong>: p-values, confidence intervals, quartiles, variance measurements</li>
+                <li><strong style="color: #87ceeb;">Multiple Architectures</strong>: Test across different network topologies and activation functions</li>
+                <li><strong style="color: #87ceeb;">Hyperparameter Sensitivity</strong>: Systematic exploration of learning rates and other settings</li>
             </ul>
 
-            <h2>Expected Insights</h2>
-            <p>This research will reveal:</p>
-            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
-                <li><strong>Optimizer Gaps</strong>: How far optimizers typically fall short of true optima</li>
-                <li><strong>Consistency Patterns</strong>: Which optimizers are most reliable across problems</li>
-                <li><strong>Hyperparameter Sensitivity</strong>: How robust optimizers are to parameter choices</li>
-                <li><strong>Problem-Specific Performance</strong>: Which optimizers work best for different loss landscapes</li>
+            <h2 style="color: #87ceeb;">Expected Insights</h2>
+            <p style="color: #e6f3ff;">This research will reveal:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8; color: #e6f3ff;">
+                <li><strong style="color: #87ceeb;">Optimizer Gaps</strong>: How far optimizers typically fall short of true optima</li>
+                <li><strong style="color: #87ceeb;">Consistency Patterns</strong>: Which optimizers are most reliable across problems</li>
+                <li><strong style="color: #87ceeb;">Hyperparameter Sensitivity</strong>: How robust optimizers are to parameter choices</li>
+                <li><strong style="color: #87ceeb;">Problem-Specific Performance</strong>: Which optimizers work best for different loss landscapes</li>
             </ul>
 
-            <h2>Impact</h2>
-            <p>Project Blacklight will provide the machine learning community with:</p>
-            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
-                <li><strong>Evidence-Based Optimizer Selection</strong>: Move beyond marketing claims to actual performance data</li>
-                <li><strong>Realistic Expectations</strong>: Understand the true limitations of current optimization methods</li>
-                <li><strong>Research Direction</strong>: Identify where optimizer improvements are most needed</li>
-                <li><strong>Practical Guidelines</strong>: Provide actionable advice for practitioners</li>
+            <h2 style="color: #87ceeb;">Impact</h2>
+            <p style="color: #e6f3ff;">Project Blacklight will provide the machine learning community with:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8; color: #e6f3ff;">
+                <li><strong style="color: #87ceeb;">Evidence-Based Optimizer Selection</strong>: Move beyond marketing claims to actual performance data</li>
+                <li><strong style="color: #87ceeb;">Realistic Expectations</strong>: Understand the true limitations of current optimization methods</li>
+                <li><strong style="color: #87ceeb;">Research Direction</strong>: Identify where optimizer improvements are most needed</li>
+                <li><strong style="color: #87ceeb;">Practical Guidelines</strong>: Provide actionable advice for practitioners</li>
             </ul>
 
-            <h2>Technical Infrastructure</h2>
-            <div class="collaboration-highlight">
-                <p><strong>Development Platform</strong>: Forge system with RTX 5070 Ti (16GB VRAM)<br>
-                <strong>Computational Requirements</strong>: Embarrassingly parallel - perfect for GPU acceleration<br>
-                <strong>Timeline</strong>: Research phase active, implementation planned for 2025</p>
+            <h2 style="color: #87ceeb;">Technical Infrastructure</h2>
+            <div class="collaboration-highlight" style="background: rgba(135,206,235,0.1); border-left: 5px solid #87ceeb; color: #e6f3ff;">
+                <p style="color: #e6f3ff;"><strong style="color: #87ceeb;">Development Platform</strong>: Forge system with RTX 5070 Ti (16GB VRAM)<br>
+                <strong style="color: #87ceeb;">Computational Requirements</strong>: Embarrassingly parallel - perfect for GPU acceleration<br>
+                <strong style="color: #87ceeb;">Timeline</strong>: Research phase active, implementation planned for 2025</p>
             </div>
 
-            <h2>Research Questions</h2>
-            <p>Key questions we aim to answer:</p>
-            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8;">
+            <h2 style="color: #87ceeb;">Research Questions</h2>
+            <p style="color: #e6f3ff;">Key questions we aim to answer:</p>
+            <ul style="margin: 20px 0; padding-left: 30px; line-height: 1.8; color: #e6f3ff;">
                 <li>How much optimization performance do we actually lose by not finding global minima?</li>
                 <li>Are newer optimizers like AdamW meaningfully better than SGD on problems we can solve exactly?</li>
                 <li>Do optimizer performance patterns on toy problems predict real-world behavior?</li>
@@ -71,8 +71,10 @@
             </ul>
 
             <div style="text-align: center; margin: 40px 0;">
-                <a href="mailto:contact@sgcx.org?subject=Project%20Blacklight%20Collaboration" class="cta-button" style="margin-right: 15px;">Collaborate with Us</a>
-                <a href="{% url 'projects:project_list' %}" class="project-link">← All Projects</a>
+                <a href="mailto:contact@sgcx.org?subject=Project%20Blacklight%20Collaboration" 
+                   style="display: inline-block; background: #87ceeb; color: #2c3e50; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 15px rgba(135,206,235,0.3); margin-right: 15px;">Collaborate with Us</a>
+                <a href="{% url 'projects:project_list' %}" 
+                   style="color: #87ceeb; text-decoration: none; font-weight: bold; transition: color 0.3s ease;">← All Projects</a>
             </div>
         </div>
     </div>
