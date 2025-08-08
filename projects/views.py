@@ -3,7 +3,8 @@ from django.shortcuts import render
 
 def project_list(request):
     """List all SGCX projects"""
-    projects = [
+    # Research projects
+    research_projects = [
         {
             'name': 'Project Lacuna',
             'tagline': 'Neural Networks for Missing Data Mechanism Detection',
@@ -41,10 +42,43 @@ def project_list(request):
         }
     ]
     
+    # Interface projects (future subdomains)
+    interface_projects = [
+        {
+            'name': 'Clinical Interface',
+            'tagline': 'Statistical tools for clinical research',
+            'description': 'GUI wrapper around PyMVNMLE, PyRegression, PySurvival for clinical trials',
+            'status': 'Planned',
+            'url_name': 'projects:clinical'
+        },
+        {
+            'name': 'Pharma Interface',
+            'tagline': 'Pharmaceutical statistical analysis',
+            'description': 'Regulatory compliance and FDA submission tools',
+            'status': 'Planned', 
+            'url_name': 'projects:pharma'
+        },
+        {
+            'name': 'Finance Interface',
+            'tagline': 'Financial modeling and risk analysis',
+            'description': 'Statistical libraries with financial modeling focus',
+            'status': 'Planned',
+            'url_name': 'projects:finance'
+        },
+        {
+            'name': 'Insurance Interface',
+            'tagline': 'Insurance analytics and risk modeling',
+            'description': 'Actuarial modeling and claims analysis tools',
+            'status': 'Planned',
+            'url_name': 'projects:insurance'
+        }
+    ]
+    
     context = {
         'page_title': 'Projects - SGCX',
         'meta_description': 'Explore SGCX research projects and statistical AI tools',
-        'projects': projects,
+        'research_projects': research_projects,
+        'interface_projects': interface_projects,
     }
     return render(request, 'projects/project_list.html', context)
 
@@ -87,3 +121,35 @@ def bonsai(request):
         'meta_description': 'Statistics-Informed Neural Network Pruning',
     }
     return render(request, 'projects/bonsai.html', context)
+
+def clinical(request):
+    """Clinical Interface detail page"""
+    context = {
+        'page_title': 'Clinical Interface - SGCX',
+        'meta_description': 'Statistical tools for clinical research and biostatistics',
+    }
+    return render(request, 'projects/clinical.html', context)
+
+def pharma(request):
+    """Pharma Interface detail page"""
+    context = {
+        'page_title': 'Pharma Interface - SGCX',
+        'meta_description': 'Pharmaceutical statistical analysis and regulatory compliance',
+    }
+    return render(request, 'projects/pharma.html', context)
+
+def finance(request):
+    """Finance Interface detail page"""
+    context = {
+        'page_title': 'Finance Interface - SGCX',
+        'meta_description': 'Financial modeling and risk analysis tools',
+    }
+    return render(request, 'projects/finance.html', context)
+
+def insurance(request):
+    """Insurance Interface detail page"""
+    context = {
+        'page_title': 'Insurance Interface - SGCX',
+        'meta_description': 'Insurance analytics and actuarial modeling tools',
+    }
+    return render(request, 'projects/insurance.html', context)

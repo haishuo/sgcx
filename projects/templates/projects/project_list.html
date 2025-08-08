@@ -9,8 +9,9 @@
             Pioneering statistical AI research through human-AI collaboration
         </p>
 
+        <h2 style="color: #333; margin-bottom: 30px;">Research Projects</h2>
         <div class="project-grid">
-            {% for project in projects %}
+            {% for project in research_projects %}
             <div class="project-summary">
                 <div class="project-status">{{ project.status }}</div>
                 <h3>{{ project.name }}</h3>
@@ -23,13 +24,32 @@
             {% endfor %}
         </div>
 
+        <h2 style="color: #333; margin-bottom: 30px; margin-top: 60px;">Interface Projects</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 40px; font-style: italic;">
+            Future dedicated platforms - currently in planning phase
+        </p>
+        <div class="project-grid">
+            {% for project in interface_projects %}
+            <div class="project-summary" style="border-left-color: #27ae60;">
+                <div class="project-status" style="background: #27ae60;">{{ project.status }}</div>
+                <h3>{{ project.name }}</h3>
+                <p style="font-style: italic; color: #27ae60; margin-bottom: 15px;">{{ project.tagline }}</p>
+                <p>{{ project.description }}</p>
+                <div style="margin-top: 20px;">
+                    <a href="{% url project.url_name %}" class="project-link">Learn More →</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
         <div style="text-align: center; margin-top: 60px; padding: 40px; background: #f8f9fa; border-radius: 15px;">
-            <h2 style="color: #333; margin-bottom: 20px;">Future Projects</h2>
+            <h2 style="color: #333; margin-bottom: 20px;">The SGCX Ecosystem</h2>
             <p style="font-size: 1.1rem; color: #666; line-height: 1.8;">
-                We're continuously developing new tools and methodologies to advance statistical practice. 
-                Our pipeline includes interface wrappers for clinical research, pharmaceutical applications, 
-                financial modeling, and insurance analytics - all built on rigorous statistical foundations 
-                with beautiful, intuitive user experiences.
+                Our research projects drive the development of practical tools and methodologies. 
+                Interface projects will eventually become dedicated platforms at their own subdomains 
+                (clinical.sgcx.org, pharma.sgcx.org, etc.), each powered by the statistical innovations 
+                from our research portfolio. All platforms will maintain seamless integration and 
+                consistent branding across the SGCX ecosystem.
             </p>
             <div style="margin-top: 30px;">
                 <a href="{% url 'landing:contact' %}" class="cta-button">Get Updates</a>
