@@ -480,6 +480,52 @@ footer {
     background: rgba(255,255,255,0.1);
 }
 
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Ensure header stays above everything */
+header {
+    position: relative;
+    z-index: 10000;
+}
+
+.nav-links.mobile-open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    z-index: 9999;
+    padding: 20px 0;
+}
+
+.nav-links.mobile-open li {
+    margin: 0;
+    text-align: center;
+}
+
+.nav-links.mobile-open a {
+    display: block;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-links.mobile-open a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
 /* Responsive design for hero logo */
 @media (max-width: 768px) {
     .hero-logo {
