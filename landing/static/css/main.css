@@ -59,8 +59,50 @@ nav {
 
 .hero {
     text-align: center;
-    padding: 100px 0;
+    padding: 80px 0 100px 0;
     color: white;
+}
+
+/* UPDATED: Large integrated logo above h1 */
+.hero-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    position: relative;
+    height: 150px;
+}
+
+.hero-logo .logo-main {
+    position: relative;
+    font-weight: bold;
+}
+
+.hero-logo .logo-main .x-behind {
+    position: absolute;
+    font-size: 10rem;
+    color: transparent;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(1.8);
+    font-weight: 900;
+    font-family: 'Georgia', serif;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.25);
+    text-stroke: 2px rgba(255, 255, 255, 0.25);
+    line-height: 1;
+}
+
+.hero-logo .logo-main .sgc-front {
+    position: relative;
+    z-index: 2;
+    font-size: 5rem;
+    letter-spacing: 0.15em;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    line-height: 1;
 }
 
 .hero h1 {
@@ -355,7 +397,23 @@ footer {
     text-decoration: none;
 }
 
+/* Responsive design for hero logo */
 @media (max-width: 768px) {
+    .hero-logo {
+        height: 100px;
+        margin-bottom: 30px;
+    }
+    
+    .hero-logo .logo-main .x-behind {
+        font-size: 6rem;
+        transform: translate(-50%, -50%) scaleX(1.6);
+    }
+    
+    .hero-logo .logo-main .sgc-front {
+        font-size: 3rem;
+        letter-spacing: 0.1em;
+    }
+    
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -379,5 +437,22 @@ footer {
     
     .logo-svg {
         height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo {
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-logo .logo-main .x-behind {
+        font-size: 4.5rem;
+        transform: translate(-50%, -50%) scaleX(1.4);
+    }
+    
+    .hero-logo .logo-main .sgc-front {
+        font-size: 2.2rem;
+        letter-spacing: 0.05em;
     }
 }

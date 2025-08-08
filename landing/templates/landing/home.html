@@ -4,6 +4,15 @@
 {% block content %}
 <section class="hero">
     <div class="container">
+        <!-- Large SGCX logo as "super header" -->
+        <div class="hero-logo">
+            <div class="logo-main">
+                <div class="x-behind">X</div>
+                <div class="sgc-front">SGC</div>
+            </div>
+        </div>
+        
+        <!-- Main headline directly below logo -->
         <h1>Statistical AI Research</h1>
         <p>Pioneering human-AI collaboration to solve fundamental problems in statistics and data science</p>
         <a href="{% url 'projects:project_list' %}" class="cta-button">Explore Our Work</a>
