@@ -45,30 +45,30 @@ def project_list(request):
     # Interface projects (future subdomains)
     interface_projects = [
         {
-            'name': 'Clinical Interface',
+            'name': 'SGC-Clinical',
             'tagline': 'Statistical tools for clinical research',
-            'description': 'GUI wrapper around PyMVNMLE, PyRegression, PySurvival for clinical trials',
+            'description': 'Drag-and-drop clinical trial analysis with no coding required - upload data, configure analysis, download FDA-ready results',
             'status': 'Planned',
             'url_name': 'projects:clinical'
         },
         {
-            'name': 'Pharma Interface',
+            'name': 'SGC-Pharma',
             'tagline': 'Pharmaceutical statistical analysis',
-            'description': 'Regulatory compliance and FDA submission tools',
+            'description': 'No-code pharmaceutical statistical analysis with built-in regulatory compliance and automated FDA submission reports',
             'status': 'Planned', 
             'url_name': 'projects:pharma'
         },
         {
-            'name': 'Finance Interface',
+            'name': 'SGC-Finance',
             'tagline': 'Financial modeling and risk analysis',
-            'description': 'Statistical libraries with financial modeling focus',
+            'description': 'Point-and-click financial risk modeling and portfolio analysis - no programming, just upload data and get professional reports',
             'status': 'Planned',
             'url_name': 'projects:finance'
         },
         {
-            'name': 'Insurance Interface',
+            'name': 'SGC-Insurance',
             'tagline': 'Insurance analytics and risk modeling',
-            'description': 'Actuarial modeling and claims analysis tools',
+            'description': 'Intuitive actuarial analysis interface - drag-and-drop claims data for reserving, pricing, and regulatory reporting',
             'status': 'Planned',
             'url_name': 'projects:insurance'
         }
